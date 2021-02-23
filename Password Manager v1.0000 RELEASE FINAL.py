@@ -99,8 +99,9 @@ Number : """)
         edit_passwords()
     elif mode == "3":
         usernames_passwords.clear()
+        print("You have been signed out.")
         print("Thanks for using this tool.")
-        time.sleep(1)
+        time.sleep(2)
         exit()
 
 def edit_passwords():
@@ -136,10 +137,6 @@ def view_passwords():
     if idk_nothing_important != 8397219317293871238:
         cls()
         menu()
-    elif idk_nothing_important == 8397219317293871238:
-        print("Good guess!")
-        time.sleep(2)
-        exit()
 
 def new_account():
     print("Please enter a username for your account. ")
