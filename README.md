@@ -7,3 +7,9 @@ password1_lucas.py is Lucas
 the rest is Scott
 
 and Ravi doesnt do his work
+
+
+
+
+
+also who reads this lmao
