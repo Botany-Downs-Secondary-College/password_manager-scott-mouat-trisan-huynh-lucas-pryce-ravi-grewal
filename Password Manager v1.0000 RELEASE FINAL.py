@@ -143,7 +143,7 @@ def view_passwords():
     for another_login_set in usernames_passwords:
         print("• " + another_login_set)
     
-    idk_nothing_important = input("Press any key to return to the menu.")
+    idk_nothing_important = input("Press ENTER to return to the menu.")
     if idk_nothing_important != 8397219317293871238:
         cls()
         menu()
