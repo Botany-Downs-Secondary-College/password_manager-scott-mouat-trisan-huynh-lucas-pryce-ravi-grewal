@@ -31,7 +31,7 @@ def signin():
 def account_login():
     print("Welcome to the login portal.")
     time.sleep(1)
-    entered_username = input("Please enter your username: ").strip()
+    entered_username = input("If at anytime you wish to exit, enter 'escape' as the username. Please enter your username: ").strip()
     if entered_username in existing_users:
         print("Welcome, {}.".format(entered_username))
         while True:
@@ -50,7 +50,8 @@ def account_login():
                 print("If you have forgotten your password and wish to exit, type 'escape' as the password.")
                 time.sleep(2)
                 cls()
-
+    elif entered_username == "escape":
+        signin()
     elif entered_username not in existing_users:
         print("That username does not exist. Please try again.")
         time.sleep(1)
@@ -88,6 +89,7 @@ def menu():
 1: View passwords
 2: Edit/add passwords
 3: Sign out and exit
+4: Sign out
 Number : """)
             break
         except ValueError:
@@ -103,6 +105,14 @@ Number : """)
         print("Thanks for using this tool.")
         time.sleep(2)
         exit()
+    elif mode == "4":
+        usernames_passwords.clear()
+        print("You have been signed out.")
+        cls()
+        signin()
+    else:
+        cls()
+        menu()
 
 def edit_passwords():
     while True:
