@@ -62,7 +62,7 @@ def intro():
     print("Hello. This program is used to securely store and retreive passwords.")
     time.sleep(1)
     cls()
-    name = input("What is your name?: ").strip().capitalize()
+    name = input("What is your name?: ").strip().title()
     while True:
         try:
             age = float(input("What is your age, {}?: ".format(name)))
@@ -77,7 +77,7 @@ def intro():
         print("Please return when you are older than the age of 13.")
         time.sleep(4)
         exit()
-    
+
     cls()
     signin()
 
@@ -118,7 +118,7 @@ def edit_passwords():
     while True:
         print("You currently have {} logins saved in your account.".format(len(usernames_passwords)))
         time.sleep(1)
-        password_title = input("What is the use of this login (e.g. Google): ").strip().capitalize()
+        password_title = input("What is the use of this login (e.g. Google): ").strip().title()
         password_username = input("What is the username/email for the login?: ").strip()
         password_password = input("What is the password for the login?: ").strip()
         cls()
@@ -153,7 +153,7 @@ def view_passwords():
         exit()
 
 def new_account():
-    print("Please enter a username for your account. ")
+    print("Please enter a username for your account.")
     time.sleep(1)
     new_user_username = input("It can contain letters, numbers and/or symbols: ").strip()
     if new_user_username in existing_users:
@@ -169,7 +169,12 @@ def new_account():
     time.sleep(1)
     print("A strong password will contain a mixture of upper and lower case letters, numbers, and symbols, and should be something you can remember.")
     time.sleep(1)
-    new_user_password_check_1 = input("Enter your password. Keep in mind that it is case sensitive: ").strip()
+    new_user_password_check_1 = input("Enter your password. Passwords are case sensitive. It must contain more than 8 characters: ").strip()
+    if len(new_user_password_check_1) <= 7:
+        print("Please enter a password that is at least 8 characters.")
+        time.sleep(2)
+        cls()
+        new_account()
     new_user_password_check_2 = input("Please confirm your password: ").strip()
 
     if new_user_password_check_2 != new_user_password_check_1:
@@ -182,4 +187,5 @@ def new_account():
     cls()
     account_login()
 
+cls()
 intro()
