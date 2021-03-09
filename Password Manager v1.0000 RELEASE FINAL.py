@@ -41,9 +41,6 @@ def account_login():
                 time.sleep(1)
                 cls()
                 menu()
-            elif entered_password == "escape":
-                cls()
-                signin()
             else:
                 print("Incorrect password. Passwords are case sensitive.")
                 time.sleep(1)
@@ -51,6 +48,7 @@ def account_login():
                 time.sleep(2)
                 cls()
     elif entered_username == "escape":
+        cls()
         signin()
     elif entered_username not in existing_users:
         print("That username does not exist. Please try again.")
@@ -85,12 +83,12 @@ def menu():
     cls()
     while True:
         try:
-            mode = input("""Choose a mode by entering a number:
+            mode = float(input("""Choose a mode by entering a number:
 1: View passwords
 2: Edit/add passwords
 3: Sign out and exit
 4: Sign out
-Number : """)
+Number : """))
             break
         except ValueError:
             print("That is not a valid choice. Please try again.")
@@ -111,6 +109,7 @@ Number : """)
         cls()
         signin()
     else:
+        print("That is not a valid choice. Please try again.")
         cls()
         menu()
 
@@ -136,8 +135,7 @@ def edit_passwords():
             time.sleep(1)
             cls()
             menu()
-
-        
+   
 def view_passwords():
     print("You currently have {} logins saved in your account.".format(len(usernames_passwords)))
     for another_login_set in usernames_passwords:
