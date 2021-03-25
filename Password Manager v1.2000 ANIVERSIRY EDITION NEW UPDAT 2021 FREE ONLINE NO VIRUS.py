@@ -15,7 +15,6 @@ with open("Documents/school/Year 12/2DIP/Password Manager/secure/existing_users_
     existing_users_passwords = existing_users_passwords_txt.read()
     existing_users_passwords = existing_users_passwords.split("=")
 
-
 def cls():
     os.system('cls')
 
