@@ -10,8 +10,6 @@ import string
 with open("Documents/school/Year 12/2DIP/Password Manager/secure/existing_users.txt", "r") as existing_users_txt:
     existing_users = existing_users_txt.read()
     existing_users = existing_users.split("=")
-    print(existing_users)
-    time.sleep(4)
 
 with open("Documents/school/Year 12/2DIP/Password Manager/secure/existing_users_passwords.txt", "r") as existing_users_passwords_txt:
     existing_users_passwords = existing_users_passwords_txt.read()
